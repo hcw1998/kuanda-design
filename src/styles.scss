@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 1rem;
+}
+
+// navbar old
+.nav {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.site-title {
+  font-size: 30px;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active {
+  background-color: rgb(207, 204, 204);
+}
+
+.nav li:hover {
+  background-color: rgb(207, 204, 204);
+}
+
+
+// project.js
+
+$large: "(min-width: 1200px)";
+$big: "(max-width: 1200px) and (min-width: 800px)";
+$medium: "(max-width: 800px) and (min-width: 400px)";
+$small: "(max-width: 400px)";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridThumbs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  @include flex-center;
+  box-sizing: border-box;
+
+  padding: 40px;
+  flex-direction: column;
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 250px;
+}
+
+.text {
+  @include flex-center;
+  background: #FFF;
+  width: 100%;
+  height: 30px;
+  font-size: 26px;
+  text-align: center;
+}
+
+@media screen and #{$large} {
+  .word {
+    width: 25%;
+  }
+}
+
+@media screen and #{$big} {
+  .word {
+    width: 33.33%;
+  }
+}
+
+@media screen and #{$medium} {
+  .word {
+    width: 50%;
+  }
+}
+
+@media screen and #{$small} {
+  .word {
+    width: 100%;
+  }
+}
+
+//About.js
+
+.about-logo {
+  width: 400px;
+  height: 400px;
+  background-color: #7C7C7C;
+  float: left;
+}
+.about-logo img{
+  width: 400px;
+  height: 400px;
+}
+
+.about-content {
+  width: 100vw;
+  height: 300px;
+  // background-color: rgb(226, 129, 129);
+}
+
+.about-text {
+  text-align: left;
+  font-size: 18px;
+  font-style: normal;
+}
+
+//contact.js
+
+.facebook-link{
+    color: #3b5998;
+    background-color: transparent;
+    &:hover{
+        color: #3b5998;
+    }
+}
+
+.line-link{
+    background-color: transparent;
+    color: #00c300;
+    &:hover{
+        color: #00c300;
+    }
+}
+
+.btn-facebook{
+    color: white;
+    background-color: #3b5998;
+    border-radius: 24px;
+    &:hover{
+        color: white;
+    }
+}
