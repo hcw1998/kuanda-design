@@ -1,4 +1,4 @@
-import image1 from '../images/01.jpeg';
+import image1 from '../images/01.jpg';
 import image2 from '../images/02.jpg';
 import image3 from '../images/03.jpg';
 import "../styles.scss";
