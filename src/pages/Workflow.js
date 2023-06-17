@@ -12,18 +12,19 @@ export default function Workflow() {
             <div className="accordion" id="accordionPanelsStayOpenExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="panelsStayOpen-headingOne">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                            1.初步諮詢
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            1.初步諮詢＆收費方式概估
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                         <div className="accordion-body">
                             了解業主設計需求、喜好、現況、預算與告知收費方式與提案費等等。<br /><br />
                             <strong>收費方式</strong> <br />
-                            提案費用:<br />
-                            40坪以下____NT:15,000<br />
-                            40坪以上____另行報價<br />
-                            費用需於丈量提案前支付，提案後確認合作時，全額費用可折抵設計費。
+                            新房每坪4~7萬<br />
+                            舊房每坪7~10萬<br />
+                            可依不同預算做<br />
+                            編列"專案預算"<br />
+                            以上概估不含家具、電器、及設備
                         </div>
                     </div>
                 </div>

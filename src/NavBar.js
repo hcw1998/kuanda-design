@@ -42,29 +42,30 @@ import("bootstrap")
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+    <nav className="navbar navbar-expand-lg  p-3" style= {{backgroundColor: "#FFFFFF"}} >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">KuanDa Design</a>
+        <a className="navbar-brand" href="/">寬達設計 · KuanDa Design</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className=" collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto ">
-            <CustomLink href="/project">Project</CustomLink>
-            <CustomLink href="/about">About</CustomLink>
-            <CustomLink href="/work-flow">Work Flow</CustomLink>
-            <CustomLink href="/contact">Contact</CustomLink>
-            <li class="nav-item dropdown">
+          {/* <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="/dropdown" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                作品總覽
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a className="dropdown-item" href="/blog">Blog</a></li>
-                <li><a className="dropdown-item" href="/fu">About Us</a></li>
-                <li><a className="dropdown-item" href="/ck">Contact us</a></li>
+                <li><a className="dropdown-item" href="/residence">住宅空間</a></li>
+                <li><a className="dropdown-item" href="/commercial">商辦空間</a></li>
               </ul>
-            </li>
+            </li> */}
+            <CustomLink href="/project">作品總覽</CustomLink>
+            <CustomLink href="/about">關於寬達</CustomLink>
+            <CustomLink href="/work-flow">作業流程</CustomLink>
+            <CustomLink href="/contact">設計團隊</CustomLink>
+            <CustomLink href="/furniture">材質設備</CustomLink>
+            <CustomLink href="/artlife">藝文生活</CustomLink>
           </ul>
         </div>
       </div>
