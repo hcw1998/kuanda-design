@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 import image1_5 from '../images/1-5.jpg';
@@ -18,15 +18,16 @@ export default function Residence() {
 
     const { projectId } = useParams()
     const [currentIndex, setCurrentIndex] = useState(0)
+    const images = getImages()
 
-    const images = useMemo(() => {
+    function getImages() {
         switch (projectId) {
             case '1': return [image1_1, image1_2, image1_3, image1_4, image1_5, image1_6, image1_7, image1_8, image1_9, image1_10]
             case '2': return [image2_6]
             case '3': return [image3_1]
             default: return []
         }
-    }, [projectId])
+    }
 
     function scroll(nextValue) {
         if (currentIndex + nextValue === images.length) {
@@ -49,10 +50,10 @@ export default function Residence() {
                 </button>
                 <img className="w-100 h-100" alt="..." src={images[currentIndex]} style={{ objectFit: 'contain' }}/>
             </div>
-            <div className='d-flex flex-row justify-content-center mt-3' style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
+            <div className='flex-row justify-content-center mt-3 scrollX'>
                 {images.map((image, index) => {
                     return (
-                        <div className={`me-3 ${currentIndex === index ? 'border border-3 border-dark' : 'border border-3'}`} style={{ width: 90, height: 90, cursor: 'pointer' }} onClick={() => setCurrentIndex(currentIndex => index)}>
+                        <div className={`me-3 ${currentIndex === index ? 'border border-3 border-dark' : 'border border-3'}`} style={{ width: 90, height: 90, cursor: 'pointer', flexShrink: 0 }} onClick={() => setCurrentIndex(currentIndex => index)}>
                             <img className="w-100 h-100" alt="..." src={image}/>
                         </div>
                     )

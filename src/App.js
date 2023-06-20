@@ -7,7 +7,6 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import Workflow from './pages/Workflow';
 import Residence from './pages/Residence';
-import "./styles.scss";
 
 function App() {
   return (

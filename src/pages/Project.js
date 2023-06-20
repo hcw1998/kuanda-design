@@ -6,10 +6,6 @@ import image5_1 from '../images/5-1.jpg';
 import image7_1 from '../images/7-1.jpg';
 import image8_1 from '../images/8-1.jpg';
 
-
-import "../styles.scss";
-
-
 export default function Project() {
 
   const residences = [

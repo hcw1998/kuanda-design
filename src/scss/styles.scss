@@ -1,13 +1,13 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-}
 
-.container {
-  margin: 1rem;
+.scrollX{
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  display: flex;
+}
+.scrollX::-webkit-scrollbar {
+  display: none;
 }
 
 // navbar old

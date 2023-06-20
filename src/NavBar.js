@@ -1,7 +1,5 @@
-import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import "./styles.scss";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import("bootstrap") 
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import("bootstrap") 
 
 // export default function Navbar() {
 //   return (
