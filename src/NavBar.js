@@ -42,7 +42,7 @@ import("bootstrap")
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg  p-3" style= {{backgroundColor: "#FFFFFF"}} >
+    <nav className="navbar navbar-expand-lg" style= {{backgroundColor: "#FFFFFF"}} >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">寬達設計 · KuanDa Design</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

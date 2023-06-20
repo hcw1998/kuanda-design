@@ -2,15 +2,15 @@ import React from "react";
 import image1_5 from '../images/1-5.jpg'
 const Home = () => {
   return (
-    <div>
-      <div class="card bg-dark text-white" style={{ borderWidth: '0px' }}>
-        <img src={image1_5} className="card-img" alt=""/>
-          <div class="card-img-overlay">
-            <h5 class="card-title"></h5>
-            <p class="card-text"></p>
-            <p class="card-text"></p>
+    <div className="bg-dark text-white vh-100 w-100 position-absolute top-0 start-0" style={{ zIndex: -100, background: `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(${image1_5})` }}>
+        <div class="d-flex flex-row justify-content-center align-items-center h-100">
+          <div className="text-center">
+            <h1>寬達設計</h1>
+            <h1>KuanDa Design</h1>
+            {/* <p class="card-text">123</p>
+            <p class="card-text">456</p> */}
           </div>
-      </div>
+        </div>
     </div>
   );
 };

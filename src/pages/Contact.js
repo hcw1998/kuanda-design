@@ -3,41 +3,44 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLine, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import designer from '../images/designer.jpeg';
 
+function Form() {
+    return (
+        <form className='col-lg-6 col-xxl-4 offset-lg-3 offset-xxl-4 py-5'>
+            <div class="row mb-4">
+                <div className='col-lg-6'>
+                    <label className="form-label">Name</label>
+                    <input className="form-control"></input>
+                </div>
+                <div className='col-lg-6'>
+                    <label className="form-label">Email</label>
+                    <input type="email" className="form-control"></input>
+                </div>
+            </div>
+            <div className='mb-4'>
+                <label className="form-label">Select</label>
+                <select className="form-select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div className='mb-4'>
+                <label className="form-label">Message</label>
+                <textarea className="form-control" rows='6'/>
+            </div>
+            <div className='d-flex flex-row justify-content-center'>
+                <button type="submit" className="btn btn-primary">Send</button>
+            </div>
+        </form>
+    )
+}
 
 export default function Contact() {
     return (
         <>
-            {/* <form>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">name</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3"></input>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">phone</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3"></input>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">email</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3"></input>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-sm-10 offset-sm-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1"></input>
-                                <label class="form-check-label" for="gridCheck1">
-                                    提交
-                                </label>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </form> */}
+            <Form />
             <div className="row">
                 <div className="col-md-6 col-lg-4 pb-3">
                     <div className="card" >

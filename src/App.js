@@ -6,24 +6,26 @@ import Footer from './pages/Footer';
 import Home from './pages/Home'
 import Project from './pages/Project'
 import Workflow from './pages/Workflow';
-import RestidenceOne from './pages/project/ResidenceOne';
+import Residence from './pages/Residence';
 import "./styles.scss";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <div className='container'>
+      <div className='min-vh-100'>
+        <NavBar />
+        <div className='container'>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           {/* <Route path='/residence' element={<Restidence />} />
           <Route path='/commercial' element={<Commercial />} /> */}
           <Route path='/project' element={<Project />} />
+          <Route path='/project/:projectId' element={<Residence />} />
           <Route path='/about' element={<About />} />
           <Route path='/work-flow' element={<Workflow />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/project/residence-one' element={<RestidenceOne />} />
         </Routes>
+        </div>
       </div>
       <Footer />
     </>
