@@ -42,14 +42,14 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">寬達設計 · KuanDa Design</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+        <a className="navbar-brand" href="/">H-C-D Design of Art · 程奕設計</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav ms-auto ">
-          {/* <li class="nav-item dropdown">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav ms-auto">
+            {/* <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="/dropdown" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 作品總覽
               </a>
@@ -59,11 +59,11 @@ export default function NavBar() {
               </ul>
             </li> */}
             <CustomLink href="/project">作品總覽</CustomLink>
-            <CustomLink href="/about">關於寬達</CustomLink>
+            <CustomLink href="/about">關於H-C-D</CustomLink>
             <CustomLink href="/work-flow">作業流程</CustomLink>
             <CustomLink href="/contact">設計團隊</CustomLink>
-            <CustomLink href="/furniture">材質設備</CustomLink>
-            <CustomLink href="/artlife">藝文生活</CustomLink>
+            {/* <CustomLink href="/furniture">材質設備</CustomLink>
+            <CustomLink href="/artlife">藝文生活</CustomLink> */}
           </ul>
         </div>
       </div>

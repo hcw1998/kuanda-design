@@ -1,30 +1,68 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-import image1_5 from '../images/1-5.jpg';
-import image1_1 from '../images/1-1.jpg';
-import image1_2 from '../images/1-2.jpg';
-import image1_3 from '../images/1-3.jpg';
-import image1_4 from '../images/1-4.jpg';
-import image1_6 from '../images/1-6.jpg';
-import image1_7 from '../images/1-7.jpg';
-import image1_8 from '../images/1-8.jpg';
-import image1_9 from '../images/1-9.jpg';
-import image1_10 from '../images/1-10.jpg';
-import image2_6 from '../images/2-6.jpg';
-import image3_1 from '../images/3-1.jpg';
+// import image1_5 from '../images/1-5.jpg';
+// import image1_1 from '../images/1-1.jpg';
+// import image1_2 from '../images/1-2.jpg';
+// import image1_3 from '../images/1-3.jpg';
+// import image1_4 from '../images/1-4.jpg';
+// import image1_6 from '../images/1-6.jpg';
+// import image1_7 from '../images/1-7.jpg';
+// import image1_8 from '../images/1-8.jpg';
+// import image1_9 from '../images/1-9.jpg';
+// import image1_10 from '../images/1-10.jpg';
+// import `${awsurl}2-6 from '../images/2-6.jpg';
+// import `${awsurl}2-2 from '../images/2-2.jpg';
+// import `${awsurl}2-3 from '../images/2-3.jpg';
+// import `${awsurl}2-4 from '../images/2-4.jpg';
+// import `${awsurl}2-5 from '../images/2-5.jpg';
+// import `${awsurl}2-7 from '../images/2-7.jpg';
+// import `${awsurl}2-10 from '../images/2-10.jpg';
+// import `${awsurl}2-17 from '../images/2-17.jpg';
+// import `${awsurl}2-21 from '../images/2-21.jpg';
+// import `${awsurl}2-23 from '../images/2-23.jpg';
+// import `${awsurl}2-24 from '../images/2-24.jpg';
+// import `${awsurl}3-1.jpg` from '../images/3-1.jpg';
+// import `${awsurl}3-2.jpg` from '../images/3-2.jpg';
+// import `${awsurl}3-3.jpg` from '../images/3-3.jpg';
+// import `${awsurl}3-4.jpg` from '../images/3-4.jpg';
+// import `${awsurl}3-5.jpg` from '../images/3-5.jpg';
+// import `${awsurl}3-6.jpg` from '../images/3-6.jpg';
+// import `${awsurl}4-1.jpg` from '../images/4-1.jpg';
+// import `${awsurl}4-2.jpg` from '../images/4-2.jpg';
+// import `${awsurl}4-3.jpg` from '../images/4-3.jpg';
+// import `${awsurl}4-4.jpg` from '../images/4-4.jpg';
+// import `${awsurl}4-8.jpg` from '../images/4-8.jpg';
+// import `${awsurl}5-1.jpg` from '../images/5-1.jpg';
+// import `${awsurl}5-3.jpg` from '../images/5-3.JPG';
+// import `${awsurl}5-4.jpg` from '../images/5-4.JPG';
+// import `${awsurl}5-5.jpg` from '../images/5-5.JPG';
+// import `${awsurl}5-6.jpg` from '../images/5-6.JPG';
+// import `${awsurl}8-1.jpg` from '../images/8-1.jpg';
+// import `${awsurl}8-2.jpg` from '../images/8-2.jpg';
+// import `${awsurl}8-3.jpg` from '../images/8-3.jpg';
+// import `${awsurl}8-4.jpg` from '../images/8-4.jpg';
+// import `${awsurl}8-5.jpg` from '../images/8-5.jpg';
+// import `${awsurl}8-6.jpg` from '../images/8-6.jpg';
+// import `${awsurl}8-7.jpg` from '../images/8-7.jpg';
+
 
 export default function Residence() {
 
     const { projectId } = useParams()
     const [currentIndex, setCurrentIndex] = useState(0)
     const images = getImages()
+    
 
     function getImages() {
+        const awsurl = 'https://kuanda-design.s3.amazonaws.com/'
         switch (projectId) {
-            case '1': return [image1_1, image1_2, image1_3, image1_4, image1_5, image1_6, image1_7, image1_8, image1_9, image1_10]
-            case '2': return [image2_6]
-            case '3': return [image3_1]
+            case '1': return [`${awsurl}1-1.jpg`, `${awsurl}1-2.jpg`, `${awsurl}1-3.jpg`, `${awsurl}1-4.jpg`, `${awsurl}1-5.jpg`, `${awsurl}1-6.jpg`, `${awsurl}1-7.jpg`, `${awsurl}1-8.jpg`, `${awsurl}1-9.jpg`, `${awsurl}1-10.jpg`]
+            case '2': return [`${awsurl}2-6.jpg`, `${awsurl}2-2.jpg`, `${awsurl}2-3.jpg`, `${awsurl}2-4.jpg`, `${awsurl}2-5.jpg`, `${awsurl}2-7.jpg`, `${awsurl}2-10.jpg`, `${awsurl}2-17.jpg`, `${awsurl}2-21.jpg`, `${awsurl}2-23.jpg`, `${awsurl}2-24.jpg`]
+            case '3': return [`${awsurl}3-1.jpg`, `${awsurl}3-2.jpg`, `${awsurl}3-3.jpg`, `${awsurl}3-4.jpg`,`${awsurl}3-5.jpg`, `${awsurl}3-6.jpg`]
+            case '4': return [`${awsurl}4-1.jpg`, `${awsurl}4-2.jpg`, `${awsurl}4-3.jpg`, `${awsurl}4-4.jpg`,`${awsurl}4-8.jpg`]
+            case '5': return [`${awsurl}5-1.jpg`, `${awsurl}5-3.JPG`, `${awsurl}5-4.JPG`, `${awsurl}5-5.JPG`, `${awsurl}5-6.JPG`]
+            case '8': return [`${awsurl}8-1.jpg`, `${awsurl}8-2.jpg`, `${awsurl}8-3.jpg`, `${awsurl}8-4.jpg`,`${awsurl}8-5.jpg`, `${awsurl}8-6.jpg`, `${awsurl}8-7.jpg`]
             default: return []
         }
     }

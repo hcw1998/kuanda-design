@@ -1,24 +1,16 @@
-import image1_5 from '../images/1-5.jpg';
-import image2_6 from '../images/2-6.jpg';
-import image3_1 from '../images/3-1.jpg';
-import image4_1 from '../images/4-1.jpg';
-import image5_1 from '../images/5-1.jpg';
-import image7_1 from '../images/7-1.jpg';
-import image8_1 from '../images/8-1.jpg';
-
 export default function Project() {
 
   const residences = [
-    { id: '1', name: '安和路作品', src: image1_5 },
-    { id: '2', name: '中山北路作品', src: image2_6 },
-    { id: '3', name: '信義路作品', src: image3_1 },
-    { id: '4', name: '光復北路作品', src: image4_1 },
-    { id: '5', name: '天母西路作品', src: image5_1 },
-    { id: '6', name: '淡水溫泉宅作品', src: image7_1 },
+    { id: '1', name: '安和路作品', src: "https://kuanda-design.s3.amazonaws.com/1-5.jpg" },
+    { id: '2', name: '中山北路作品', src: "https://kuanda-design.s3.amazonaws.com/2-6.jpg" },
+    { id: '3', name: '信義路作品', src: "https://kuanda-design.s3.amazonaws.com/3-1.jpg" },
+    { id: '4', name: '光復北路作品', src: "https://kuanda-design.s3.amazonaws.com/4-1.jpg" },
+    { id: '5', name: '天母西路作品', src: "https://kuanda-design.s3.amazonaws.com/5-1.jpg" },
+    // { id: '6', name: '淡水溫泉宅作品', src: "https://kuanda-design.s3.amazonaws.com/7-1.jpg" },
   ]
 
   const commercials = [
-    { id: '7', name: '衡陽路辦公室', src: image8_1 },
+    { id: '8', name: '衡陽路辦公室', src: "https://kuanda-design.s3.amazonaws.com/8-1.jpg" },
   ]
 
   const categories = [

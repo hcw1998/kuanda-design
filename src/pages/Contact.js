@@ -1,7 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLine, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import designer from '../images/designer.jpeg';
+import staff1 from '../images/staff1.png';
+import staff2 from '../images/staff2.jpg';
+import staff3 from '../images/staff3.jpg';
+
 
 function Form() {
     return (
@@ -19,11 +22,11 @@ function Form() {
             <div className='mb-4'>
                 <label className="form-label">Select</label>
                 <select className="form-select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>住宅空間</option>
+                    <option>商業空間</option>
+                    <option>一般諮詢</option>
+                    {/* <option>4</option>
+                    <option>5</option> */}
                 </select>
             </div>
             <div className='mb-4'>
@@ -40,11 +43,11 @@ function Form() {
 export default function Contact() {
     return (
         <>
-            <Form />
+            {/* <Form /> */}
             <div className="row">
                 <div className="col-md-6 col-lg-4 pb-3">
                     <div className="card" >
-                        <img src={designer} className="card-img-top" alt="..." />
+                        <img src={staff1} className="card-img-top" alt="..." style={{height:"320px"}}/>
                         <div className="card-body">
                             <h5 className="card-title">黃紀達</h5>
                             <h6 className="card-subtitle mb-2 text-muted">藝術總監</h6>
@@ -65,12 +68,12 @@ export default function Contact() {
                 </div>
                 <div className="col-md-6 col-lg-4 pb-3">
                     <div className="card">
-                        <img src={designer} className="card-img-top" alt="..." />
+                        <img src={staff2} className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h5 className="card-title">藍姿寬</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">藝術總監</h6>
-                            <h6 className="card-text">信箱 : gordon199968@gmail.com</h6>
-                            <h6 className="card-text">手機 : 0918734556</h6>
+                            <h6 className="card-subtitle mb-2 text-muted">藝術創意顧問</h6>
+                            <h6 className="card-text">寬達創意設計董事長</h6>
+                            <h6 className="card-text">台灣藝術大學前副校長</h6>
                             <div className="d-flex justify-content-start">
                                 <a href='https://www.facebook.com/zhao.xun.58'
                                     rel="noopener noreferrer">
@@ -86,12 +89,12 @@ export default function Contact() {
                 </div>
                 <div className="col-md-6 col-lg-4 pb-3">
                     <div className="card">
-                        <img src={designer} className="card-img-top" alt="..." />
+                        <img src={staff3} className="card-img-top" alt="..." style={{height:"320px"}} />
                         <div className="card-body">
-                            <h5 className="card-title">Steve</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">設計師</h6>
-                            <h6 className="card-text">信箱 : gordon199968@gmail.com</h6>
-                            <h6 className="card-text">手機 : 0918734556</h6>
+                            <h5 className="card-title">許兆慶</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">法律顧問</h6>
+                            <h6 className="card-text">眾博法律事務所所長</h6>
+                            {/* <h6 className="card-text">手機 : 0918734556</h6> */}
                             <div className="d-flex justify-content-start">
                                 <a href='https://www.facebook.com/zhao.xun.58'
                                     rel="noopener noreferrer">

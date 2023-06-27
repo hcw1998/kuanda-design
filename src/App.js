@@ -9,6 +9,7 @@ import Project from './pages/Project'
 import Workflow from './pages/Workflow';
 import Residence from './pages/Residence';
 
+
 function Layout(props) {
   return (
     <>
@@ -28,8 +29,6 @@ function App() {
     <Routes>
       <Route element={<Layout><Outlet/></Layout>}>
         <Route path='/' element={<Home />}></Route>
-        {/* <Route path='/residence' element={<Restidence />} />
-        <Route path='/commercial' element={<Commercial />} /> */}
         <Route path='/project' element={<Project />} />
         <Route path='/project/:projectId' element={<Residence />} />
         <Route path='/about' element={<About />} />
