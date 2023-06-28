@@ -18,12 +18,11 @@ export default function Workflow() {
                     </h2>
                     <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                         <div className="accordion-body">
-                            了解業主設計需求、喜好、現況、預算與告知收費方式與提案費等等。<br /><br />
-                            <strong>收費方式</strong> <br />
+                            了解業主設計風格需求、喜好、現況、預算，告知收費方式與提案費等等。<br /><br />
+                            <strong>概估預算</strong> <br />
                             新房每坪4~7萬<br />
                             舊房每坪7~10萬<br />
-                            可依不同預算做<br />
-                            編列"專案預算"<br />
+                            可依不同預算編列"專案預算"<br />
                             以上概估不含家具、電器、及設備
                         </div>
                     </div>
@@ -36,19 +35,19 @@ export default function Workflow() {
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                         <div className="accordion-body">
-                            與業主端至現場丈量、拍照存檔，作為設計依據。
+                            與業主端至現場丈量、拍照存檔，作為設計參考依據。
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="panelsStayOpen-headingThree">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                            3.平面提案
+                            3.平面規劃設計提案
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                         <div className="accordion-body">
-                            針對業主需求後，提出平面設計與空間規劃提案。
+                            針對業主需求，提出平面設計與空間規劃提案。
                         </div>
                     </div>
                 </div>
@@ -60,7 +59,7 @@ export default function Workflow() {
                     </h2>
                     <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
                         <div className="accordion-body">
-                            依造設計圖面後，進行提供業主整體工程報價。
+                            依照設計圖面定案後，提供業主整體工程報價。
                         </div>
                     </div>
                 </div>
@@ -72,7 +71,7 @@ export default function Workflow() {
                     </h2>
                     <div id="panelsStayOpen-collapsefive" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingfive">
                         <div className="accordion-body">
-                            至現場時將工地照片上傳至 LINE 群組，不定期約業主至現場。
+                            依照設計圖至現場執行，將工地執行紀錄、照片上傳至Line群組，定期線上彙報進度，不定期約業主至現場。
                         </div>
                     </div>
                 </div>
@@ -84,7 +83,7 @@ export default function Workflow() {
                     </h2>
                     <div id="panelsStayOpen-collapsesix" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingsix">
                         <div className="accordion-body">
-                            驗主驗收完畢，結案交屋。
+                            業主驗收完畢，結案交屋。
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ export default function Residence() {
     function getImages() {
         const awsurl = 'https://kuanda-design.s3.amazonaws.com/'
         switch (projectId) {
-            case '1': return [`${awsurl}1-1.jpg`, `${awsurl}1-2.jpg`, `${awsurl}1-3.jpg`, `${awsurl}1-4.jpg`, `${awsurl}1-5.jpg`, `${awsurl}1-6.jpg`, `${awsurl}1-7.jpg`, `${awsurl}1-8.jpg`, `${awsurl}1-9.jpg`, `${awsurl}1-10.jpg`]
+            case '1': return [`${awsurl}1-4.jpg`, `${awsurl}1-5.jpg`, `${awsurl}1-6.jpg`, `${awsurl}1-7.jpg`, `${awsurl}1-8.jpg`, `${awsurl}1-9.jpg`, `${awsurl}1-10.jpg`, `${awsurl}1-1.jpg`, `${awsurl}1-2.jpg`, `${awsurl}1-3.jpg`]
             case '2': return [`${awsurl}2-6.jpg`, `${awsurl}2-2.jpg`, `${awsurl}2-3.jpg`, `${awsurl}2-4.jpg`, `${awsurl}2-5.jpg`, `${awsurl}2-7.jpg`, `${awsurl}2-10.jpg`, `${awsurl}2-17.jpg`, `${awsurl}2-21.jpg`, `${awsurl}2-23.jpg`, `${awsurl}2-24.jpg`]
             case '3': return [`${awsurl}3-1.jpg`, `${awsurl}3-2.jpg`, `${awsurl}3-3.jpg`, `${awsurl}3-4.jpg`,`${awsurl}3-5.jpg`, `${awsurl}3-6.jpg`]
             case '4': return [`${awsurl}4-1.jpg`, `${awsurl}4-2.jpg`, `${awsurl}4-3.jpg`, `${awsurl}4-4.jpg`,`${awsurl}4-8.jpg`]

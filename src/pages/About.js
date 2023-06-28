@@ -24,13 +24,13 @@ export default function About() {
                 <div style={{ height: "50px" }} />
                 <span style={{ fontSize: "21px", fontWeight: "bold" }}>
                     黃紀達<br />
-                    Chi Da, Huang<br />
+                    Gordon Huang<br />
                 </span>
-                <div style={{ height: "30px" }} />
+                {/* <div style={{ height: "30px" }} />
                 <span style={{ fontSize: "18px", fontWeight: "lighter" }}>
                     國立台灣藝術大學<br />
                     national taiwan university of arts<br />
-                </span>
+                </span> */}
             </div>
         </div>
     )
