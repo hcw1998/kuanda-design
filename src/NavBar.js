@@ -61,9 +61,9 @@ export default function NavBar() {
             <CustomLink href="/project">作品總覽</CustomLink>
             <CustomLink href="/about">關於H-C-D</CustomLink>
             <CustomLink href="/work-flow">作業流程</CustomLink>
-            <CustomLink href="/contact">設計團隊</CustomLink>
-            {/* <CustomLink href="/furniture">材質設備</CustomLink>
-            <CustomLink href="/artlife">藝文生活</CustomLink> */}
+            <CustomLink href="/contact">聯絡我們</CustomLink>
+            <CustomLink href="/furniture">材質設備</CustomLink>
+            { /*<CustomLink href="/artlife">藝文生活</CustomLink> */}
           </ul>
         </div>
       </div>

@@ -8,7 +8,7 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import Workflow from './pages/Workflow';
 import Residence from './pages/Residence';
-
+import Furniture from './pages/Furniture';
 
 function Layout(props) {
   return (
@@ -34,6 +34,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/work-flow' element={<Workflow />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/furniture' element={<Furniture />} />
       </Route>
     </Routes>
   )
