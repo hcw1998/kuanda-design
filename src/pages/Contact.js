@@ -24,6 +24,10 @@ function Form() {
         message: ""
     })
     const handleSubmit = (e) => {
+        if(formData.name === "" || formData.email === "" || formData.phone === "") {
+            alert('請填寫所有必填項目')
+            return;
+        }
         fetch("https://urqlj4je32.execute-api.us-east-1.amazonaws.com/prod/", {
             method: "POST", // or 'PUT'
             body: JSON.stringify(formData), // data can be `string` or {object}!
@@ -78,9 +82,9 @@ function Form() {
         <>
             {/* <div id="liveAlertPlaceholder"></div> */}
             <form className='col-lg-6 col-xxl-4 offset-lg-3 offset-xxl-4 py-5' onSubmit={handleSubmit}>
-                <div class="row mb-4">
+                <div className="row mb-4">
                     <div className='col-lg-6'>
-                        <label className="form-label">聯絡人</label>
+                        <label className="form-label">聯絡人 (必填)</label>
                         <input className="form-control" onChange={(e) => setFormData({ ...formData, name: e.target.value })} value={formData.name}></input>
                     </div>
                     <div className='col-lg-6'>
@@ -88,11 +92,11 @@ function Form() {
                         <input className="form-control" onChange={(e) => setFormData({ ...formData, gender: e.target.value })} value={formData.gender}></input>
                     </div>
                     <div className='col-lg-6'>
-                        <label className="form-label">Email</label>
+                        <label className="form-label">Email (必填)</label>
                         <input type="email" className="form-control" onChange={(e) => setFormData({ ...formData, email: e.target.value })} value={formData.email}></input>
                     </div>
                     <div className='col-lg-6'>
-                        <label className="form-label">電話</label>
+                        <label className="form-label">電話 (必填)</label>
                         <input className="form-control" onChange={(e) => setFormData({ ...formData, phone: e.target.value })} value={formData.phone}></input>
                     </div>
                     <div className='col-lg-6'>
@@ -100,7 +104,7 @@ function Form() {
                         <input className="form-control" onChange={(e) => setFormData({ ...formData, lindId: e.target.value })} value={formData.lindId}></input>
                     </div>
                 </div>
-                <div class="row mb-4">
+                <div className="row mb-4">
                     <div className='col-lg-12'>
                         <label className="form-label">地址</label>
                         <input className="form-control" onChange={(e) => setFormData({ ...formData, address: e.target.value })} value={formData.address}></input>
@@ -111,7 +115,6 @@ function Form() {
                     <select className="form-select" onChange={(e) => setFormData({ ...formData, type: e.target.value })} value={formData.type}>
                         <option>住宅空間</option>
                         <option>商辦空間</option>
-                        <option>一般諮詢</option>
                         <option>舊屋翻修</option>
                         <option>預售屋</option>
                     </select>
