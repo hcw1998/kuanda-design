@@ -117,33 +117,6 @@ $small: "(max-width: 400px)";
   }
 }
 
-//contact.js
-
-.facebook-link{
-    color: #3b5998;
-    background-color: transparent;
-    &:hover{
-        color: #3b5998;
-    }
-}
-
-.line-link{
-    background-color: transparent;
-    color: #00c300;
-    &:hover{
-        color: #00c300;
-    }
-}
-
-.btn-facebook{
-    color: white;
-    background-color: #3b5998;
-    border-radius: 24px;
-    &:hover{
-        color: white;
-    }
-}
-
 // ---------------------------------------------------------------
 // 作品卡片 (Project.js)
 // 固定比例 + 裁切，讓同一列的卡片下緣對齊
@@ -316,4 +289,234 @@ $small: "(max-width: 400px)";
   color: $bronze-dark !important;
   letter-spacing: 0.12em;
   margin: $sp-1 0 0 !important;
+}
+
+
+// ---------------------------------------------------------------
+// 聯絡表單 (Contact.js)
+// 固定兩欄網格，左右邊界從頭到尾對齊
+// ---------------------------------------------------------------
+
+.enquiry {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: $sp-4 0;
+}
+
+.enquiry__head {
+  margin-bottom: $sp-4;
+}
+
+.enquiry__title {
+  font-family: $font-serif;
+  font-size: $fs-xl;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.enquiry__intro {
+  font-size: $fs-sm;
+  color: $ink-muted;
+  margin: $sp-1 0 0;
+  max-width: $measure;
+}
+
+.enquiry__group {
+  border: 0;
+  padding: 0;
+  margin: 0 0 $sp-4;
+}
+
+.enquiry__legend {
+  float: none;   // 蓋掉 Bootstrap reboot 的 legend 樣式
+  font-family: $font-sans;
+  font-size: $fs-xs;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $bronze;
+  padding: 0 0 $sp-1;
+  margin-bottom: $sp-3;
+  border-bottom: 1px solid $line;
+  width: 100%;
+}
+
+.enquiry__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $sp-3 $sp-3;
+}
+
+.enquiry__field--full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 40rem) {
+  .enquiry__grid { grid-template-columns: 1fr; }
+}
+
+.enquiry {
+  .form-label {
+    font-size: $fs-sm;
+    color: $ink-soft;
+    margin-bottom: $sp-1 * 0.75;
+  }
+
+  .form-control,
+  .form-select {
+    border-radius: 2px;
+    border-color: $line;
+    padding: 0.55rem 0.75rem;
+    font-size: $fs-base;
+    color: $ink;
+    transition: border-color $transition, box-shadow $transition;
+
+    &:focus {
+      border-color: $bronze;
+      box-shadow: 0 0 0 3px rgba($bronze, 0.16);
+    }
+
+    &::placeholder { color: rgba($ink-muted, 0.65); }
+  }
+}
+
+.enquiry__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $sp-2;
+  margin-top: $sp-4;
+}
+
+.enquiry__status {
+  font-size: $fs-sm;
+  margin: 0;
+  text-align: center;
+
+  &--sent  { color: #3F6B4C; }
+  &--error { color: #9B3A2B; }
+}
+
+// ---------------------------------------------------------------
+// 團隊卡片 (Contact.js)
+// 照片統一比例、卡片等高，文字量不同也不會參差
+// ---------------------------------------------------------------
+
+.team {
+  margin-top: $sp-5;
+  padding-top: $sp-4;
+  border-top: 1px solid $line;
+}
+
+.team__title {
+  font-family: $font-serif;
+  font-size: $fs-xl;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.team__label {
+  font-size: $fs-xs;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $bronze;
+  margin: $sp-1 0 0;
+}
+
+.member {
+  height: 100%;              // 撐滿 grid 欄位 → 三張卡等高
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border: 1px solid $line;
+}
+
+.member__photo {
+  aspect-ratio: 1 / 1;       // 三張來源尺寸不同，統一裁成正方形
+  overflow: hidden;
+  background: $stone;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;   // 人臉多半在上半部
+  }
+}
+
+.member__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;            // 吃掉剩餘高度，讓卡片底部對齊
+  padding: $sp-3;
+}
+
+.member__name {
+  font-family: $font-serif;
+  font-size: $fs-lg;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.member__role {
+  font-size: $fs-xs;
+  letter-spacing: 0.14em;
+  color: $bronze-dark;
+  margin: $sp-1 * 0.6 0 0;
+}
+
+.member__credentials {
+  list-style: none;
+  margin: $sp-2 0 0;
+  padding: $sp-2 0 0;
+  border-top: 1px solid $line;
+
+  li {
+    font-size: $fs-sm;
+    line-height: 1.8;
+    color: $ink-soft;
+  }
+}
+
+.member__contact {
+  margin: $sp-2 0 0;
+  font-size: $fs-sm;
+
+  > div {
+    display: flex;
+    gap: $sp-1;
+    line-height: 1.9;
+  }
+
+  dt {
+    font-weight: 400;
+    color: $ink-muted;
+    flex: 0 0 2.6em;
+  }
+
+  dd {
+    margin: 0;
+    color: $ink-soft;
+    word-break: break-all;
+  }
+}
+
+.member__links {
+  display: flex;
+  gap: $sp-2;
+  margin-top: auto;          // 永遠貼齊卡片底部
+  padding-top: $sp-3;
+
+  a {
+    color: $ink-muted;
+    font-size: 1.35rem;
+    line-height: 1;
+    transition: color $transition;
+
+    &:hover { color: $bronze; }
+  }
 }
