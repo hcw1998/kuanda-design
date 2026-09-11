@@ -1,0 +1,136 @@
+@import './tokens';
+
+// ---------------------------------------------------------------
+// 基礎排版
+// 這裡的規則會蓋過 Bootstrap，前提是 index.js 先載入 bootstrap.min.css
+// ---------------------------------------------------------------
+
+body {
+  font-family: $font-sans;
+  font-weight: 400;
+  color: $ink;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  // 刻意不設 color：讓標題繼承父層顏色，
+  // 否則首頁照片上的 .text-white 會被蓋掉，白字變深色。
+}
+
+// ---------------------------------------------------------------
+// 品牌色 —— 取代 Bootstrap 預設的 #0d6efd
+// ---------------------------------------------------------------
+
+.btn-primary {
+  --bs-btn-bg: #{$bronze};
+  --bs-btn-border-color: #{$bronze};
+  --bs-btn-hover-bg: #{$bronze-dark};
+  --bs-btn-hover-border-color: #{$bronze-dark};
+  --bs-btn-active-bg: #{$bronze-dark};
+  --bs-btn-active-border-color: #{$bronze-dark};
+  --bs-btn-disabled-bg: #{$bronze};
+  --bs-btn-disabled-border-color: #{$bronze};
+  --bs-btn-focus-shadow-rgb: 154, 123, 79;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+  font-size: $fs-sm;
+  padding: 0.5rem 1.25rem;
+}
+
+// 低調的外框按鈕，適合放在作品照旁邊
+.btn-outline-brand {
+  color: $ink;
+  border: 1px solid $line;
+  background: transparent;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+  font-size: $fs-sm;
+  padding: 0.5rem 1.25rem;
+  transition: color $transition, border-color $transition, background-color $transition;
+
+  &:hover,
+  &:focus-visible {
+    color: $bronze-dark;
+    border-color: $bronze;
+    background: transparent;
+  }
+}
+
+a {
+  color: $bronze-dark;
+  text-underline-offset: 0.2em;
+
+  &:hover { color: $bronze; }
+}
+
+// 鍵盤操作要看得見焦點
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid $bronze;
+  outline-offset: 2px;
+}
+
+// ---------------------------------------------------------------
+// 導覽列
+// ---------------------------------------------------------------
+
+.navbar.bg-light {
+  background-color: $white !important;
+  border-bottom: 1px solid $line;
+}
+
+.navbar-brand {
+  font-family: $font-serif;
+  font-weight: 600;
+  font-size: $fs-md;
+  letter-spacing: 0.04em;
+  color: $ink;
+
+  &:hover { color: $ink; }
+}
+
+.navbar .nav-link {
+  color: $ink-soft;
+  font-size: $fs-sm;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color $transition;
+
+  &:hover { color: $ink; }
+
+  &.active {
+    color: $ink;
+    font-weight: 500;
+  }
+}
+
+// ---------------------------------------------------------------
+// 頁尾
+// ---------------------------------------------------------------
+
+.site-footer {
+  border-top: 1px solid $line;
+  color: $ink-muted;
+  font-size: $fs-sm;
+
+  a { color: $ink-muted; transition: color $transition; }
+  a:hover { color: $bronze; }
+
+  // 本專案沒有載入 Bootstrap Icons 的 CSS，.bi 不會自帶 fill: currentColor，
+  // 少了這行 svg 會維持預設黑色，不受上面的顏色設定影響。
+  svg { fill: currentColor; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

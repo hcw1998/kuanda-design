@@ -1,3 +1,5 @@
+@import './tokens';
+
 
 
 .scrollX{
@@ -115,31 +117,6 @@ $small: "(max-width: 400px)";
   }
 }
 
-//About.js
-
-.about-logo {
-  width: 400px;
-  height: 400px;
-  background-color: #7C7C7C;
-  float: left;
-}
-.about-logo img{
-  width: 400px;
-  height: 400px;
-}
-
-.about-content {
-  width: 100vw;
-  height: 300px;
-  // background-color: rgb(226, 129, 129);
-}
-
-.about-text {
-  text-align: left;
-  font-size: 18px;
-  font-style: normal;
-}
-
 //contact.js
 
 .facebook-link{
@@ -165,4 +142,178 @@ $small: "(max-width: 400px)";
     &:hover{
         color: white;
     }
+}
+
+// ---------------------------------------------------------------
+// 作品卡片 (Project.js)
+// 固定比例 + 裁切，讓同一列的卡片下緣對齊
+// ---------------------------------------------------------------
+
+.work-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus-visible {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.work-card__media {
+  position: relative;
+  overflow: hidden;
+  background-color: $stone;
+  aspect-ratio: 4 / 3;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 640ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  // 滑過時輕微推近，暗示可點擊
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba($ink, 0);
+    transition: background-color $transition;
+  }
+}
+
+.work-card:hover .work-card__media img,
+.work-card:focus-visible .work-card__media img {
+  transform: scale(1.045);
+}
+
+.work-card:hover .work-card__media::after,
+.work-card:focus-visible .work-card__media::after {
+  background: rgba($ink, 0.12);
+}
+
+.work-card__title {
+  font-family: $font-serif;
+  font-size: $fs-md;
+  font-weight: 600;
+  color: $ink;
+  margin: $sp-2 0 0;
+  letter-spacing: 0.04em;
+  transition: color $transition;
+}
+
+.work-card:hover .work-card__title {
+  color: $bronze-dark;
+}
+
+// 分類標題
+.work-section__title {
+  font-family: $font-serif;
+  font-size: $fs-xl;
+  font-weight: 600;
+  color: $ink;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.work-section__label {
+  font-family: $font-sans;
+  font-size: $fs-xs;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $bronze;
+  margin: $sp-1 0 0;
+}
+
+.work-section + .work-section {
+  margin-top: $sp-5;
+}
+
+
+// ---------------------------------------------------------------
+// 關於頁 (About.js)
+// ---------------------------------------------------------------
+
+.about__portrait {
+  margin: 0;
+  overflow: hidden;
+  background-color: $stone;
+  // 原圖近乎正方形 (398×380)，用 1:1 只裁掉約 4%；
+  // 改成直式比例會從左右各切掉一大塊，人像會被框得太緊。
+  aspect-ratio: 1 / 1;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.about__body {
+  max-width: $measure;
+
+  p {
+    font-size: $fs-base;
+    line-height: 2;
+    color: $ink-soft;
+    margin: 0 0 $sp-2;
+  }
+}
+
+// 三段式流程：保留原本刻意的分行，但改用列表語意
+.about__steps {
+  list-style: none;
+  margin: $sp-3 0;
+  padding: 0 0 0 $sp-2;
+  border-left: 2px solid $bronze;
+
+  li {
+    font-size: $fs-base;
+    line-height: 2;
+    color: $ink-soft;
+  }
+
+  span {
+    font-family: $font-serif;
+    color: $bronze-dark;
+    font-weight: 600;
+    margin-right: $sp-2;
+  }
+}
+
+.about__sign {
+  margin-top: $sp-4;
+  padding-top: $sp-3;
+  border-top: 1px solid $line;
+}
+
+.about__name {
+  font-family: $font-serif;
+  font-size: $fs-lg;
+  font-weight: 600;
+  color: $ink;
+  letter-spacing: 0.04em;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+
+  span {
+    font-size: $fs-sm;
+    font-weight: 400;
+    color: $ink-muted;
+    letter-spacing: 0.08em;
+    margin-left: $sp-2;
+  }
+}
+
+.about__role {
+  font-size: $fs-sm !important;
+  color: $bronze-dark !important;
+  letter-spacing: 0.12em;
+  margin: $sp-1 0 0 !important;
 }

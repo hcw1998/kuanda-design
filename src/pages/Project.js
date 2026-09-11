@@ -14,41 +14,31 @@ export default function Project() {
   ]
 
   const categories = [
-    { blockquote: '住宅空間設計' , figcaption: 'RESIDENTIAL SPACE', samples: residences },
-    { blockquote: '商業空間設計' , figcaption: 'COMMERCIAL SPACE', samples: commercials },
+    { title: '住宅空間設計', label: 'RESIDENTIAL SPACE', samples: residences },
+    { title: '商業空間設計', label: 'COMMERCIAL SPACE', samples: commercials },
   ]
 
   return (
     <>
-      {categories.map((category) => {
-        return (
-          <>
-            <figure>
-              <blockquote className="blockquote">
-                <p>{category.blockquote}</p>
-              </blockquote>
-              <figcaption className="blockquote-footer">
-                {category.figcaption}<cite title="Source Title"></cite>
-              </figcaption>
-            </figure>
-            <div className="row row-cols-1 row-cols-md-3 g-4" style={{ textAlign: 'center', borderWidth: 'thick' }}>
-              {category.samples.map((residence) => {
-                return (
-                  <a className="col text-dark" href={`/project/${residence.id}`} style={{ textDecoration: 'none' }}>
-                    <div className="card h-100" style={{height: '100%', borderWidth: '0px' }}>
-                      <img src={residence.src} className="card-img-top" height='100%' alt="" />
-                      <div className="card-body">
-                        <h6 className="card-title">{residence.name}</h6>
-                        {/* <p className="card-text" style={{fontSize: "12px"}}>坪數: 30</p> */}
-                      </div>
-                    </div>
-                  </a>
-                )
-              })}
-            </div>
-          </>
-        )
-      })}
+      {categories.map((category) => (
+        <section className="work-section" key={category.label}>
+          <h2 className="work-section__title">{category.title}</h2>
+          <p className="work-section__label">{category.label}</p>
+
+          <div className="row row-cols-1 row-cols-md-3 g-4 mt-1">
+            {category.samples.map((residence) => (
+              <div className="col" key={residence.id}>
+                <a className="work-card" href={`/project/${residence.id}`}>
+                  <div className="work-card__media">
+                    <img src={residence.src} alt={residence.name} loading="lazy" />
+                  </div>
+                  <h3 className="work-card__title">{residence.name}</h3>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
     </>
   )
 }

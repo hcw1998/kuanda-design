@@ -1,0 +1,37 @@
+// 設計 token —— 色彩取自作品攝影：黃銅燈具、深色木皮、皮革暖白
+// 新增樣式時一律引用這裡的變數，不要再寫死色碼或 inline style。
+
+// 色彩
+$ink:          #1F1C19;   // 暖炭黑，主要文字與深色底
+$ink-soft:     #4A443D;   // 次要文字
+$ink-muted:    #7A736A;   // 說明文字、footer
+$bronze:       #9A7B4F;   // 品牌主色（取自燈具黃銅）
+$bronze-dark:  #7E6340;   // hover / active
+$bronze-light: #C09A63;   // 深色底上的品牌色
+$stone:        #F5F3EF;   // 暖白底
+$line:         #DDD8D0;   // 細線分隔
+$white:        #FFFFFF;
+
+// 字體
+$font-serif: "Noto Serif TC", "Songti TC", "MingLiU", Georgia, serif;
+$font-sans:  "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+
+// 字級
+$fs-xs:   0.8125rem;
+$fs-sm:   0.9375rem;
+$fs-base: 1rem;
+$fs-md:   1.125rem;
+$fs-lg:   1.375rem;
+$fs-xl:   1.75rem;
+$fs-2xl:  2.25rem;
+
+// 間距
+$sp-1: 0.5rem;
+$sp-2: 1rem;
+$sp-3: 1.5rem;
+$sp-4: 2.5rem;
+$sp-5: 4rem;
+
+// 其他
+$transition: 220ms ease;
+$measure: 34em;   // 中文最佳行寬，約 30–35 字
