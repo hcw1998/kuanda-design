@@ -13,11 +13,11 @@ import Furniture from './pages/Furniture';
 function Layout(props) {
   return (
     <>
-      <div className='min-vh-100'>
+      <div className='min-vh-100 d-flex flex-column'>
         <NavBar />
-        <div className='container'>
+        <main className='container site-main'>
           {props.children}
-        </div>
+        </main>
       </div>
       <Footer />
     </>

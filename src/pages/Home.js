@@ -1,18 +1,27 @@
 import React from "react";
-const Home = () => {
-  return (
-    <div className="bg-dark text-white vh-100 w-100 position-absolute top-0 start-0" style={{ zIndex: -10, background: `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("https://kuanda-design.s3.amazonaws.com/1-5.jpg")`, backgroundSize: 'cover' }}>
-        <div class="d-flex flex-row justify-content-center align-items-center h-100">
-          <div className="text-center">
-            <h1> <br /><br /><br /><br /><br /></h1>
-            <h3>H-C-D Design of Art</h3>
-            <h3>程奕設計</h3>
-            {/* <p class="card-text">123</p>
-            <p class="card-text">456</p> */}
-          </div>
-        </div>
-    </div>
-  );
-};
+import { Link } from "react-router-dom";
 
-export default Home;
+const HERO = "https://kuanda-design.s3.amazonaws.com/1-5.jpg";
+
+export default function Home() {
+  return (
+    <section className="hero">
+      <img className="hero__image" src={HERO} alt="" aria-hidden="true" />
+
+      <div className="hero__content">
+        {/* 頁面真正的 h1。舊版用空的 h1 加 <br> 撐版面，
+            標題其實是 h3，等於這頁沒有主標題。 */}
+        <h1 className="hero__title">
+          <span className="hero__title-en">H-C-D Design of Art</span>
+          <span className="hero__title-tc">程奕設計</span>
+        </h1>
+
+        <p className="hero__tagline">建築安全、設計環境、健康裝置藝術</p>
+
+        <Link className="hero__cta" to="/project">
+          查看作品 <span aria-hidden="true">→</span>
+        </Link>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,435 @@
+@import './tokens';
+
+// ---------------------------------------------------------------
+// 版面容器
+// 內容原本緊貼導覽列，沒有任何垂直留白
+// ---------------------------------------------------------------
+
+.site-main {
+  padding-top: $sp-4;
+  padding-bottom: $sp-5;
+  flex: 1 0 auto;
+}
+
+// ---------------------------------------------------------------
+// 首頁 (Home.js)
+// ---------------------------------------------------------------
+
+// 從 .container 裡「破框」出去，撐滿整個視窗寬度
+.hero {
+  position: relative;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: -$sp-4;
+  height: calc(100vh - 4.5rem);
+  min-height: 30rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background-color: $ink;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// 由下往上的漸層，讓文字不再壓在照片最亮的區域
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba($ink, 0.82) 0%,
+    rgba($ink, 0.55) 28%,
+    rgba($ink, 0.12) 58%,
+    rgba($ink, 0.05) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: $sp-5 clamp(1.5rem, 6vw, 5rem);
+  color: $white;
+  max-width: 46rem;
+}
+
+.hero__title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.hero__title-en {
+  font-family: $font-serif;
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.hero__title-tc {
+  font-family: $font-serif;
+  font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: rgba($white, 0.88);
+}
+
+.hero__tagline {
+  margin: $sp-3 0 0;
+  font-size: $fs-md;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba($white, 0.82);
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-top: $sp-4;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid rgba($white, 0.55);
+  color: $white;
+  font-size: $fs-sm;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: background-color $transition, border-color $transition, color $transition;
+
+  &:hover,
+  &:focus-visible {
+    background: $white;
+    border-color: $white;
+    color: $ink;
+  }
+
+  span { transition: transform $transition; }
+  &:hover span { transform: translateX(3px); }
+}
+
+// ---------------------------------------------------------------
+// 頁面標題（作業流程／材質設備共用）
+// ---------------------------------------------------------------
+
+.workflow__title,
+.brands__title {
+  font-family: $font-serif;
+  font-size: $fs-xl;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.workflow__label,
+.brands__label {
+  font-size: $fs-xs;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $bronze;
+  margin: $sp-1 0 0;
+}
+
+.workflow__intro,
+.brands__intro {
+  font-size: $fs-sm;
+  color: $ink-muted;
+  margin: $sp-2 0 0;
+  max-width: $measure;
+}
+
+// ---------------------------------------------------------------
+// 作業流程 (Workflow.js)
+// ---------------------------------------------------------------
+
+.workflow { max-width: 48rem; }
+
+.workflow__head { margin-bottom: $sp-4; }
+
+.workflow__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workflow__step {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0 $sp-3;
+  padding: $sp-3 0;
+  border-top: 1px solid $line;
+}
+
+.workflow__marker {
+  font-family: $font-serif;
+  font-size: $fs-lg;
+  color: $bronze;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.workflow__step-title {
+  font-family: $font-serif;
+  font-size: $fs-md;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.workflow__body {
+  font-size: $fs-base;
+  line-height: 1.95;
+  color: $ink-soft;
+  margin: $sp-1 0 0;
+}
+
+.workflow__note {
+  margin-top: $sp-2;
+  padding: $sp-2 $sp-3;
+  background: $stone;
+  border-left: 2px solid $bronze;
+
+  ul {
+    list-style: none;
+    margin: $sp-1 0 0;
+    padding: 0;
+  }
+
+  li {
+    font-size: $fs-base;
+    line-height: 1.9;
+    color: $ink;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.workflow__note-title {
+  font-size: $fs-xs;
+  letter-spacing: 0.14em;
+  color: $bronze-dark;
+  margin: 0;
+}
+
+.workflow__footnote {
+  font-size: $fs-xs;
+  color: $ink-muted;
+  margin: $sp-1 0 0;
+}
+
+@media (max-width: 34rem) {
+  .workflow__step { grid-template-columns: 2.6rem 1fr; }
+}
+
+// ---------------------------------------------------------------
+// 材質設備 (Furniture.js)
+// ---------------------------------------------------------------
+
+.brands__head { margin-bottom: $sp-3; }
+
+.brand {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $line;
+  background: $white;
+}
+
+// 三個 logo 原圖底色與長寬比都不同 —— 統一白底、統一高度、統一內距
+.brand__logo {
+  height: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $sp-3;
+  background: $white;
+  border-bottom: 1px solid $line;
+
+  img {
+    max-width: 78%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.brand__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: $sp-3;
+}
+
+.brand__name {
+  font-family: $font-serif;
+  font-size: $fs-md;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.brand__blurb {
+  font-size: $fs-sm;
+  color: $ink-muted;
+  margin: $sp-1 0 0;
+}
+
+.brand__link {
+  margin-top: auto;          // 三張卡的連結永遠對齊底部
+  padding-top: $sp-3;
+  font-size: $fs-sm;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: $bronze-dark;
+
+  span { display: inline-block; transition: transform $transition; }
+  &:hover span { transform: translateX(3px); }
+}
+
+// ---------------------------------------------------------------
+// 作品內頁 (Residence.js)
+// ---------------------------------------------------------------
+
+.work-detail__head { margin-bottom: $sp-3; }
+
+.work-detail__back {
+  display: inline-block;
+  font-size: $fs-sm;
+  color: $ink-muted;
+  text-decoration: none;
+  margin-bottom: $sp-2;
+
+  &:hover { color: $bronze; }
+}
+
+.work-detail__title {
+  font-family: $font-serif;
+  font-size: $fs-xl;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.work-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $sp-1 $sp-4;
+  margin: $sp-2 0 0;
+
+  > div { display: flex; gap: $sp-1; align-items: baseline; }
+
+  dt {
+    font-size: $fs-xs;
+    letter-spacing: 0.14em;
+    color: $bronze;
+    font-weight: 400;
+  }
+
+  dd {
+    margin: 0;
+    font-size: $fs-sm;
+    color: $ink-soft;
+  }
+}
+
+.work-detail__stage {
+  position: relative;
+  background: $ink;
+  height: 72vh;
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.work-detail__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: 0;
+  background: rgba($ink, 0.35);
+  padding: $sp-2 $sp-1;
+  cursor: pointer;
+  transition: background-color $transition;
+
+  &:hover { background: rgba($ink, 0.6); }
+  &--prev { left: 0; }
+  &--next { right: 0; }
+}
+
+.work-detail__count {
+  position: absolute;
+  right: $sp-2;
+  bottom: $sp-2;
+  margin: 0;
+  font-size: $fs-xs;
+  letter-spacing: 0.1em;
+  color: rgba($white, 0.75);
+  font-variant-numeric: tabular-nums;
+}
+
+.work-detail__thumbs {
+  gap: $sp-1;
+  margin-top: $sp-2;
+  padding-bottom: $sp-1;
+}
+
+.work-detail__thumb {
+  flex: 0 0 auto;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  border: 1px solid $line;
+  background: $stone;
+  cursor: pointer;
+  opacity: 0.62;
+  transition: opacity $transition, border-color $transition;
+
+  img { width: 100%; height: 100%; object-fit: cover; }
+
+  &:hover { opacity: 0.85; }
+
+  &.is-current {
+    opacity: 1;
+    border-color: $bronze;
+  }
+}
+
+.work-detail__siblings {
+  display: flex;
+  justify-content: space-between;
+  gap: $sp-2;
+  margin-top: $sp-4;
+  padding-top: $sp-3;
+  border-top: 1px solid $line;
+
+  a {
+    font-size: $fs-sm;
+    color: $ink-soft;
+    text-decoration: none;
+
+    &:hover { color: $bronze; }
+  }
+}
+
+.work-detail__missing {
+  padding: $sp-5 0;
+  text-align: center;
+}
+
+// 單件作品的橫幅版面
+.work-card--wide .work-card__media {
+  aspect-ratio: 21 / 9;
+}

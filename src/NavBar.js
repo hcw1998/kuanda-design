@@ -1,69 +1,28 @@
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import("bootstrap") 
+import { Link, useLocation } from 'react-router-dom'
 
-// export default function Navbar() {
-//   return (
-//     <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-//       <div className="container-fluid">
-//         <a className="navbar-brand" href="/">KuanDa Design</a>
-//         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-
-//         <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-//           <ul className="navbar-nav ms-auto ">
-//             <li className="nav-item">
-//               <a className="nav-link mx-2" aria-current="location" href="/project">Project</a>
-//             </li>
-//             <li className="nav-item">
-//               <a className="nav-link mx-2" href="/about">About</a>
-//             </li>
-//             <li className="nav-item">
-//               <a className="nav-link mx-2 active" href="/contact">Contact</a>
-//             </li>
-//             <li class="nav-item dropdown">
-//               <a class="nav-link dropdown-toggle" href="/" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-//                 Dropdown
-//               </a>
-//               <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-//                 <li><a className="dropdown-item" href="/blog">Blog</a></li>
-//                 <li><a className="dropdown-item" href="/fu">About Us</a></li>
-//                 <li><a className="dropdown-item" href="/ck">Contact us</a></li>
-//               </ul>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </nav>
-//   )
-// }
+const links = [
+  { to: '/project', label: '作品總覽' },
+  { to: '/about', label: '關於H-C-D' },
+  { to: '/work-flow', label: '作業流程' },
+  { to: '/contact', label: '聯絡我們' },
+  { to: '/furniture', label: '材質設備' },
+]
 
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">H-C-D Design of Art · 程奕設計</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <Link className="navbar-brand" to="/">H-C-D Design of Art · 程奕設計</Link>
+
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+          aria-expanded="false" aria-label="開啟選單">
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto">
-            {/* <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/dropdown" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                作品總覽
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a className="dropdown-item" href="/residence">住宅空間</a></li>
-                <li><a className="dropdown-item" href="/commercial">商辦空間</a></li>
-              </ul>
-            </li> */}
-            <CustomLink href="/project">作品總覽</CustomLink>
-            <CustomLink href="/about">關於H-C-D</CustomLink>
-            <CustomLink href="/work-flow">作業流程</CustomLink>
-            <CustomLink href="/contact">聯絡我們</CustomLink>
-            <CustomLink href="/furniture">材質設備</CustomLink>
-            { /*<CustomLink href="/artlife">藝文生活</CustomLink> */}
+            {links.map((link) => <NavItem key={link.to} {...link} />)}
           </ul>
         </div>
       </div>
@@ -71,41 +30,18 @@ export default function NavBar() {
   )
 }
 
-function CustomLink({ href, children, ...props }) {
-  const path = window.location.pathname;
+function NavItem({ to, label }) {
+  // useLocation 會在切換路由時重新渲染；
+  // 舊版讀 window.location.pathname，用 <Link> 之後就不會更新了。
+  const { pathname } = useLocation()
+  const isActive = pathname === to || pathname.startsWith(`${to}/`)
 
   return (
-    <li className='nav-item'>
-      <a className={path === href ? "nav-link mx-2 active" : "nav-link mx-2"} href={href} {...props}>
-        {children}
-      </a>
+    <li className="nav-item">
+      <Link className={isActive ? 'nav-link mx-2 active' : 'nav-link mx-2'}
+        to={to} aria-current={isActive ? 'page' : undefined}>
+        {label}
+      </Link>
     </li>
   )
 }
-
-// export default function NavBar() {
-//   return (
-//     <nav className="nav">
-//       <Link to="/" className="site-title">
-//         KuanDa Design
-//       </Link>
-//       <ul>
-//         <CustomLink to="/Project">Project</CustomLink>
-//         <CustomLink to="/About">About</CustomLink>
-//         <CustomLink to="/Contact">Contact</CustomLink>
-//       </ul>
-//     </nav>
-//   )
-// }
-// function CustomLink({ to, children, ...props }) {
-//   const resolvedPath = useResolvedPath(to)
-//   const isActive = useMatch({ path: resolvedPath.pathname, end:true })
-
-//   return (
-//     <li className={isActive ? "active": ""}>
-//       <Link to={to} {...props}>
-//         {children}
-//       </Link>
-//     </li>
-//   )
-// }
